@@ -12,4 +12,4 @@ If you want to download the script for personal use, please download it from,
 
 Otherwise, use the online version and it does not require anything unless active internet connection.
 
-![Screenshot](https://github.com/aifdn/slug-generator/blob/master/img/slug-generator-screenshot.png)
+![Screenshot](https://s.env.com.bd/img/slug-generator-screenshot.png)
