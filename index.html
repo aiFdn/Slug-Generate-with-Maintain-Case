@@ -15,8 +15,11 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="shortcut icon" href="img/icon.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
+    <script defer src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
 </head>
 
 <body>
@@ -27,18 +30,42 @@
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label for="inputText">Input Text</label>
-                        <textarea class="form-control" name="inputText" id="inputText" rows="4" placeholder="Type anything here" autofocus></textarea>
+                        <textarea x-data="{
+                                resize() {
+                                  $el.style.height = '70px'
+                                  $el.style.height = $el.scrollHeight + 'px'
+                                }
+                               }"
+              x-init="resize"
+              x-on:input="resize"
+              x-on:change="resize" class="form-control" name="inputText" id="inputText" placeholder="Type anything here" autofocus></textarea>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="generatedText">Generated Text (Hyphen)</label>
-                        <textarea class="form-control" name="generatedText" id="generatedText" rows="4" placeholder="generated-output-will-be-like-this"></textarea>
+                        <textarea x-data="{
+                                resize() {
+                                  $el.style.height = '70px'
+                                  $el.style.height = $el.scrollHeight + 'px'
+                                }
+                               }"
+              x-init="resize"
+              x-on:input="resize"
+              x-on:change="resize" x-on:click="resize" class="form-control" name="generatedText" id="generatedText" placeholder="generated-output-will-be-like-this"></textarea>
                     </div>
                     <div class="col-md-12 text-right">
                         <button class="btn btn-default generatedText" data-clipboard-target="#generatedText"><img src="img/clippy.svg" width="15" alt="Copy to clipboard"> Copy to clipboard</button>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="generatedTextV2">Generated Text (Underscore)</label>
-                        <textarea class="form-control" name="generatedTextV2" id="generatedTextV2" rows="4" placeholder="generated_output_will_be_like_this"></textarea>
+                        <textarea x-data="{
+                                resize() {
+                                  $el.style.height = '70px'
+                                  $el.style.height = $el.scrollHeight + 'px'
+                                }
+                               }"
+              x-init="resize"
+              x-on:input="resize"
+              x-on:change="resize" x-on:click="resize" class="form-control" name="generatedTextV2" id="generatedTextV2" placeholder="generated_output_will_be_like_this"></textarea>
                     </div>
                     <div class="col-md-12 text-right">
                         <button class="btn btn-default generatedTextV2" data-clipboard-target="#generatedTextV2"><img src="img/clippy.svg" width="15" alt="Copy to clipboard"> Copy to clipboard</button>
